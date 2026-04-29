@@ -2,7 +2,7 @@ window.MYDATA = {
 
   // --- Music Library ---
   MUSIC_TRACKS: [
-    {
+    { // Save any song in the same format
       title: "PAGAL",
       artist: "BADSHAH",
       src: "music/pagal_badshah.m4a",
@@ -191,20 +191,20 @@ window.MYDATA = {
   ],
 
   // --- Initial Content ---
-  DEFAULT_TASKS: [
+  DEFAULT_TASKS: [ // As the name says, default, appears for first time only
     "Plan your day",
     "Review goals",
     "Take a break"
   ],
 
-  DEFAULT_REMINDERS: [
+  DEFAULT_REMINDERS: [ // same, default ^above
     { text: "Drink water", time: "09:00" },
     { text: "Stretch break", time: "12:00" },
     { text: "End of workday review", time: "18:00" }
   ],
 
   // --- Configuration ---
-  SETTINGS: {
+  SETTINGS: { // if you want then you can change it, change theme, or name or accentC..., nothing imp to say
     appName: "Focus",
     accentColor: "#6C63FF",
     theme: "auto"
