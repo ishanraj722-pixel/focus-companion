@@ -1,34 +1,12 @@
-/**
- * ╔══════════════════════════════════════════════════╗
- * ║         YOUR PERSONAL DATA FILE                 ║
- * ║  Edit this file to add your music & presets     ║
- * ╚══════════════════════════════════════════════════╝
- *
- * HOW TO ADD MUSIC:
- * - Add song objects to the MUSIC_TRACKS array below
- * - 'src' can be a relative path (e.g., "songs/mysong.mp3")
- *   or a full URL to an audio file
- * - Supported formats: mp3, ogg, wav, m4a
- *
- * HOW TO ADD DEFAULT TASKS:
- * - Add task strings to DEFAULT_TASKS
- * - These only appear on first launch (won't override saved data)
- *
- * HOW TO ADD REMINDERS:
- * - Add reminder objects to DEFAULT_REMINDERS
- * - These only appear on first launch
- */
-
 window.MYDATA = {
 
-  // ─── MUSIC TRACKS ────────────────────────────────
-  // Add your songs here. 'src' = path or URL to audio file.
+  // --- Music Library ---
   MUSIC_TRACKS: [
     {
       title: "PAGAL",
       artist: "BADSHAH",
-      src: "music/pagal_badshah.m4a",           // e.g. "music/morning.mp3" or full URL
-      cover: "https://c.saavncdn.com/831/Paagal-Hindi-2019-20190709070816-500x500.jpg"          // optional: path/URL to cover art image
+      src: "music/pagal_badshah.m4a",
+      cover: "https://c.saavncdn.com/831/Paagal-Hindi-2019-20190709070816-500x500.jpg"
     },
     {
       title: "Ishare Tere",
@@ -209,30 +187,26 @@ window.MYDATA = {
       artist: "Yo Yo Honey Singh",
       src: "music/Sheeshe Wali Chunni.mp3",
       cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGsc1XQM4haSJd7HMUEoOAFxBBfkwslmLmAQ&s"
-    },
-    // Add more tracks below:
-    // { title: "Song Name", artist: "Artist", src: "path/to/file.mp3", cover: "" },
+    }
   ],
 
-  // ─── DEFAULT TASKS (first launch only) ──────────
+  // --- Initial Content ---
   DEFAULT_TASKS: [
     "Plan your day",
     "Review goals",
     "Take a break"
   ],
 
-  // ─── DEFAULT REMINDERS (first launch only) ───────
   DEFAULT_REMINDERS: [
     { text: "Drink water", time: "09:00" },
     { text: "Stretch break", time: "12:00" },
     { text: "End of workday review", time: "18:00" }
   ],
 
-  // ─── APP SETTINGS ────────────────────────────────
+  // --- Configuration ---
   SETTINGS: {
-    appName: "Focus",             // Shown in the header
-    accentColor: "#6C63FF",       // Main accent color (hex)
-    theme: "auto"                 // "light", "dark", or "auto"
+    appName: "Focus",
+    accentColor: "#6C63FF",
+    theme: "auto"
   }
-
 };
