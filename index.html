@@ -57,7 +57,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── LAYOUT ── */
   .app {
     min-height: 100vh;
     display: grid;
@@ -67,7 +66,6 @@
     padding: 0 16px 40px;
   }
 
-  /* ── HEADER ── */
   header {
     display: flex;
     align-items: center;
@@ -101,7 +99,6 @@
     font-weight: 400;
   }
 
-  /* ── NAV TABS ── */
   .tabs {
     display: flex;
     gap: 6px;
@@ -148,12 +145,10 @@
     color: var(--accent);
   }
 
-  /* ── PANELS ── */
   .panel { display: none; animation: fadeIn 0.22s ease; }
   .panel.active { display: block; }
   @keyframes fadeIn { from { opacity:0; transform: translateY(6px); } to { opacity:1; transform: none; } }
 
-  /* ── CARD ── */
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -161,8 +156,6 @@
     padding: 22px;
     box-shadow: var(--shadow);
   }
-  /* Music card needs a positioning context for the visualizer canvas,
-     and must NOT clip overflow so bars can extend beyond the cover wrap */
   #panel-music .card {
     position: relative;
     overflow: visible;
@@ -182,7 +175,6 @@
     letter-spacing: 0.06em;
   }
 
-  /* ── TASKS ── */
   .task-input-row {
     display: flex;
     gap: 8px;
@@ -333,7 +325,6 @@
   .task-stat { font-size: 12px; color: var(--text3); }
   .task-stat span { color: var(--text); font-weight: 600; }
 
-  /* ── PROGRESS BAR ── */
   .progress-wrap { margin-bottom: 16px; }
   .progress-label {
     display: flex;
@@ -355,7 +346,6 @@
     transition: width 0.5s cubic-bezier(.4,0,.2,1);
   }
 
-  /* ── STOPWATCH ── */
   .sw-display {
     text-align: center;
     padding: 32px 0 24px;
@@ -434,18 +424,16 @@
   .lap-best { color: var(--success); }
   .lap-worst { color: var(--danger); }
 
-  /* ── MUSIC PLAYER ── */
   .music-cover-wrap {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    /* Give the wrap enough room to hold the canvas (2× cover = 280px) */
     width: 280px;
     height: 280px;
     margin-left: auto;
     margin-right: auto;
-    position: relative;   /* canvas is absolute inside this */
+    position: relative;
   }
   .music-cover {
     width: 140px; height: 140px;
@@ -461,8 +449,6 @@
   }
   .music-cover img { width: 100%; height: 100%; object-fit: cover; }
   .cover-placeholder { font-size: 52px; }
-  .music-cover.spinning { animation: spin 8s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
 
   .music-info { text-align: center; margin-bottom: 18px; }
   .music-title { font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
@@ -526,7 +512,6 @@
   .mc-btn-main:hover { filter: brightness(1.1); transform: scale(1.04); }
   .mc-btn.active { color: var(--accent); }
 
-  /* ── VIZ MODE TOGGLE ── */
   .viz-mode-row {
     display: flex;
     justify-content: center;
@@ -625,7 +610,6 @@
     font-size: 13px;
   }
 
-  /* ── LONG-TERM PROJECTS ── */
   .projects-section { margin-top: 16px; }
   .project-input-row {
     display: flex;
@@ -688,7 +672,6 @@
   }
   .project-del:hover { background: rgba(255,94,94,0.12); color: var(--danger); }
 
-  /* ── REMINDERS ── */
   .rem-form {
     display: grid;
     grid-template-columns: 1fr auto auto;
@@ -782,7 +765,6 @@
   .notif-banner.show { transform: translateX(-50%) translateY(0); }
   .notif-bell { font-size: 18px; }
 
-  /* ── EMPTY STATES ── */
   .empty {
     text-align: center;
     padding: 40px 20px;
@@ -791,7 +773,6 @@
   .empty-icon { font-size: 40px; margin-bottom: 10px; }
   .empty p { font-size: 14px; }
 
-  /* ── UTILITY ── */
   @media (max-width: 600px) {
     .tab span { display: none; }
     .sw-time { font-size: 46px; }
@@ -834,7 +815,6 @@
     </button>
   </nav>
 
-  <!-- TASKS PANEL -->
   <div class="panel active" id="panel-tasks">
     <div class="card">
       <div class="card-header">
@@ -862,7 +842,6 @@
       <div class="task-stats" id="taskStats"></div>
     </div>
 
-    <!-- LONG-TERM PROJECTS CARD -->
     <div class="card projects-section">
       <div class="card-header">
         <div class="card-title">Long-term Projects</div>
@@ -875,6 +854,7 @@
       <ul class="project-list" id="projectList"></ul>
     </div>
   </div>
+
   <div class="panel" id="panel-stopwatch">
     <div class="card">
       <div class="sw-display">
@@ -902,7 +882,6 @@
     </div>
   </div>
 
-  <!-- MUSIC PANEL -->
   <div class="panel" id="panel-music">
     <div class="card">
       <div class="music-cover-wrap">
@@ -958,7 +937,6 @@
     </div>
   </div>
 
-  <!-- REMINDERS PANEL -->
   <div class="panel" id="panel-reminders">
     <div class="card">
       <div class="card-header">
@@ -975,7 +953,6 @@
   </div>
 </div>
 
-<!-- Notification Banner -->
 <div class="notif-banner" id="notifBanner">
   <span class="notif-bell">🔔</span>
   <span id="notifText"></span>
@@ -984,15 +961,14 @@
 <audio id="audioPlayer" preload="auto"></audio>
 
 <script>
-/* ══════════════════════════════════════════════
+/* ──────────────────────────────────────────────
    STATE & STORAGE
-══════════════════════════════════════════════ */
+   ────────────────────────────────────────────── */
 const LS = {
   get(k) { try { return JSON.parse(localStorage.getItem('focus_'+k)); } catch(e){ return null; } },
   set(k,v) { try { localStorage.setItem('focus_'+k, JSON.stringify(v)); } catch(e){} }
 };
 
-// Apply accent from data file
 const S = window.MYDATA?.SETTINGS || {};
 if (S.accentColor) {
   document.documentElement.style.setProperty('--accent', S.accentColor);
@@ -1000,34 +976,32 @@ if (S.accentColor) {
   document.documentElement.style.setProperty('--accent-mid', S.accentColor + '38');
 }
 
-/* ══════════════════════════════════════════════
-   HEADER DATE
-══════════════════════════════════════════════ */
+/* ──────────────────────────────────────────────
+   HEADER
+   ────────────────────────────────────────────── */
 function updateDate() {
   const d = new Date();
   document.getElementById('headerDate').textContent = d.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric'});
 }
 updateDate();
 
-/* ══════════════════════════════════════════════
-   TAB NAVIGATION
-══════════════════════════════════════════════ */
+/* ──────────────────────────────────────────────
+   NAVIGATION
+   ────────────────────────────────────────────── */
 function switchTab(name, btn) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.getElementById('panel-' + name).classList.add('active');
   btn.classList.add('active');
-  // Re-mount canvas when music tab becomes visible so getBoundingClientRect is accurate
   if (name === 'music') requestAnimationFrame(vizMountCanvas);
 }
 
-/* ══════════════════════════════════════════════
-   TASKS
-══════════════════════════════════════════════ */
+/* ──────────────────────────────────────────────
+   TASKS MODULE
+   ────────────────────────────────────────────── */
 let tasks = LS.get('tasks') || [];
 let taskFilter = 'all';
 
-// Load defaults on first run
 if (!LS.get('tasks_init') && window.MYDATA?.DEFAULT_TASKS) {
   tasks = window.MYDATA.DEFAULT_TASKS.map((t,i) => ({
     id: Date.now()+i, text: t, done: false, priority: 'low',
@@ -1107,17 +1081,11 @@ function renderTasks() {
     list.innerHTML = filtered.map(t => `
       <li class="task-item ${t.done ? 'done' : ''}">
         <input type="checkbox" class="task-check" ${t.done ? 'checked' : ''} onchange="toggleTask(${t.id})">
-        <div class="task-priority p-${t.priority}" title="Priority: ${prioLabel[t.priority]} — click to cycle" onclick="cyclepriority(${t.id})"></div>
+        <div class="task-priority p-${t.priority}" title="Priority: ${prioLabel[t.priority]} — click to cycle" onclick="cycleTask(${t.id})"></div>
         <div class="task-text" onclick="startEdit(this,${t.id})">${escHtml(t.text)}</div>
         <button class="task-del" onclick="deleteTask(${t.id})">×</button>
       </li>`).join('');
   }
-
-  // Fix camelCase
-  list.querySelectorAll('.task-priority').forEach(el => {
-    const id = parseInt(el.getAttribute('onclick').match(/\d+/)[0]);
-    el.setAttribute('onclick', `cycleTask(${id})`);
-  });
 
   const stats = document.getElementById('taskStats');
   stats.innerHTML = `
@@ -1151,9 +1119,9 @@ function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replac
 
 renderTasks();
 
-/* ══════════════════════════════════════════════
-   LONG-TERM PROJECTS
-══════════════════════════════════════════════ */
+/* ──────────────────────────────────────────────
+   PROJECTS MODULE
+   ────────────────────────────────────────────── */
 let projects = LS.get('projects') || [];
 
 function saveProjects() { LS.set('projects', projects); }
@@ -1199,7 +1167,7 @@ function renderProjects() {
   const countEl = document.getElementById('projectCount');
   countEl.textContent = projects.length + (projects.length === 1 ? ' project' : ' projects');
   if (!projects.length) {
-    list.innerHTML = '<div class="empty"><div class="empty-icon">🚀</div><p>No long-term projects yet. Add your big goals above!</p></div>';
+    list.innerHTML = '<div class="empty"><div class="empty-icon">🚀</div><p>No long-term projects yet.</p></div>';
     return;
   }
   list.innerHTML = projects.map((p, idx) => `
@@ -1212,9 +1180,9 @@ function renderProjects() {
 
 renderProjects();
 
-/* ══════════════════════════════════════════════
-   STOPWATCH
-══════════════════════════════════════════════ */
+/* ──────────────────────────────────────────────
+   TIMER / STOPWATCH
+   ────────────────────────────────────────────── */
 let swRunning = false, swElapsed = 0, swStart = 0, swInterval = null;
 let laps = [], lapStart = 0;
 
@@ -1291,9 +1259,9 @@ function fmtTime(ms) {
 
 function pad(n) { return String(n).padStart(2,'0'); }
 
-/* ══════════════════════════════════════════════
-   MUSIC PLAYER
-══════════════════════════════════════════════ */
+/* ──────────────────────────────────────────────
+   MUSIC PLAYER ENGINE
+   ────────────────────────────────────────────── */
 const audio = document.getElementById('audioPlayer');
 let tracks = [];
 let currentTrack = 0;
@@ -1337,7 +1305,6 @@ function loadTrack(idx, play) {
     imgEl.crossOrigin = 'anonymous';
     imgEl.onload = () => {
       extractAccentFromCover(imgEl);
-      // Also update the visible cover element
     };
     imgEl.onerror = () => applyAccent(_originalAccent);
     imgEl.src = t.cover;
@@ -1347,7 +1314,7 @@ function loadTrack(idx, play) {
     applyAccent(_originalAccent);
   }
   if (t.src) {
-    audio.crossOrigin = "anonymous";   // ← ADDED THIS LINE
+    audio.crossOrigin = "anonymous";
     audio.src = t.src;
     audio.load();
   } else {
@@ -1357,7 +1324,7 @@ function loadTrack(idx, play) {
   else { isPlaying = false; }
   updatePlayBtn();
   renderPlaylist();
-  vizMountCanvas(); // re-mount canvas after innerHTML wipe
+  vizMountCanvas();
 }
 
 async function togglePlay() {
@@ -1369,8 +1336,6 @@ async function togglePlay() {
     updatePlayBtn();
   } else {
     vizInitAudio();
-    // CRITICAL: fully resume the AudioContext BEFORE playing —
-    // if the context is suspended, audio is routed into a silent graph.
     if (_vizActx) {
       try { await _vizActx.resume(); } catch(e) {}
     }
@@ -1383,13 +1348,12 @@ async function togglePlay() {
 
 function updatePlayBtn() {
   document.getElementById('playPauseBtn').innerHTML = isPlaying ? '⏸' : '▶';
-  // spinning class removed — visualizer canvas provides the playing indicator
   document.getElementById('musicCover').classList.remove('spinning');
 }
 
-/* ══════════════════════════════════════════════
-   AUDIO VISUALIZER  — NEXT LEVEL EDITION
-══════════════════════════════════════════════ */
+/* ──────────────────────────────────────────────
+   VISUALIZER LOGIC
+   ────────────────────────────────────────────── */
 let _vizActx     = null;
 let _vizAnalyser = null;
 let _vizSource   = null;
@@ -1397,7 +1361,6 @@ let _vizRaf      = null;
 let _vizCanvas   = null;
 let _vizCtx      = null;
 
-// ── CONSTANTS ───────────────────────────────
 const VIZ_BARS       = 128;
 const VIZ_FFT        = 2048;
 const VIZ_SMOOTH     = 0.8;
@@ -1407,19 +1370,17 @@ const VIZ_BAR_DEG    = 2.4;
 const VIZ_IDLE_ALPHA = 0.18;
 const VIZ_PEAK_DECAY = 0.975;
 
-// ── STATE ────────────────────────────────────
 const _peakHeights  = new Float32Array(VIZ_BARS);
 const _particles    = [];
 const _beatHistory  = new Float32Array(43);
 let   _beatIdx      = 0;
 let   _isBeat       = false;
-let   _beatPulse    = 0;     // 0..1 — decays after each beat
-let   _ringRotation = 0;     // accumulated ring rotation angle (radians)
-let   _idlePhase    = 0;     // for breathing idle animation
-let   _vizMode      = 'circular'; // 'circular' | 'wave' | 'mirror' | 'galaxy'
-const _stars        = [];    // galaxy mode star pool
+let   _beatPulse    = 0;
+let   _ringRotation = 0;
+let   _idlePhase    = 0;
+let   _vizMode      = 'circular';
+const _stars        = [];
 
-// ── VIZ MODE SWITCHER ───────────────────────
 function setVizMode(mode, btn) {
   _vizMode = mode;
   document.querySelectorAll('.viz-mode-btn').forEach(b => b.classList.remove('active'));
@@ -1428,7 +1389,6 @@ function setVizMode(mode, btn) {
   _particles.length = 0;
 }
 
-// ── HELPERS ──────────────────────────────────
 function vizHexToRgba(hex, alpha) {
   hex = hex.replace('#', '');
   if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
@@ -1438,14 +1398,12 @@ function vizHexToRgba(hex, alpha) {
   return `rgba(${r},${g},${b},${alpha})`;
 }
 
-// Parse hex → [r,g,b]
 function vizHexRGB(hex) {
   hex = hex.replace('#','');
   if (hex.length===3) hex = hex.split('').map(c=>c+c).join('');
   return [parseInt(hex.substring(0,2),16), parseInt(hex.substring(2,4),16), parseInt(hex.substring(4,6),16)];
 }
 
-// Lerp between two [r,g,b] triples and return rgba string
 function vizLerpColor(c1, c2, t, alpha) {
   const r = Math.round(c1[0] + (c2[0]-c1[0])*t);
   const g = Math.round(c1[1] + (c2[1]-c1[1])*t);
@@ -1453,7 +1411,6 @@ function vizLerpColor(c1, c2, t, alpha) {
   return `rgba(${r},${g},${b},${alpha})`;
 }
 
-// ── ACCENT COLOR FROM COVER ART ──────────────
 const _originalAccent = (window.MYDATA?.SETTINGS?.accentColor) || '#6C63FF';
 
 function extractAccentFromCover(imgEl) {
@@ -1489,7 +1446,6 @@ function applyAccent(hex) {
     `linear-gradient(to right, ${hex} ${vb.value}%, var(--surface2) ${vb.value}%)`;
 }
 
-// ── CANVAS MOUNT ─────────────────────────────
 function vizMountCanvas() {
   if (_vizCanvas && _vizCanvas.parentNode) _vizCanvas.parentNode.removeChild(_vizCanvas);
   const wrap  = document.querySelector('.music-cover-wrap');
@@ -1518,12 +1474,10 @@ function vizMountCanvas() {
   card.appendChild(_vizCanvas);
   _vizCtx = _vizCanvas.getContext('2d');
 
-  // seed galaxy stars once
   if (_stars.length === 0) {
     for (let i = 0; i < 180; i++) {
       const angle  = Math.random() * Math.PI * 2;
-      const dist   = 0.35 + Math.random() * 0.55;  // fraction of half-canvas
-      // colorTint: 0 = pure accent, 0.5 = shifted hue, 1 = complementary; random per star
+      const dist   = 0.35 + Math.random() * 0.55;
       const colorTint = Math.random();
       _stars.push({ angle, dist, size: 0.4+Math.random()*1.6, twinkle: Math.random()*Math.PI*2, speed: 0.0004+Math.random()*0.0008, colorTint });
     }
@@ -1532,7 +1486,6 @@ function vizMountCanvas() {
   if (!_vizRaf) vizDraw();
 }
 
-// ── AUDIO INIT ───────────────────────────────
 function vizInitAudio() {
   if (_vizActx) return;
   try {
@@ -1545,7 +1498,7 @@ function vizInitAudio() {
     _vizSource.connect(_vizAnalyser);
     _vizAnalyser.connect(_vizActx.destination);
   } catch(e) {
-    console.warn('Visualizer: Web Audio unavailable', e);
+    console.warn('AudioContext unavailable', e);
     _vizActx = null;
   }
 }
@@ -1558,7 +1511,6 @@ async function vizStart() {
   vizDraw();
 }
 
-// ── MAIN DRAW LOOP ────────────────────────────
 function vizDraw() {
   if (!_vizCanvas || !_vizCtx) return;
 
@@ -1577,10 +1529,8 @@ function vizDraw() {
   const binStep      = Math.max(1, Math.floor((dataArr.length * 0.75) / VIZ_BARS));
   const accentRaw    = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#6C63FF';
   const accentRGB    = vizHexRGB(accentRaw);
-  // complementary-ish highlight colour (hue shifted ~150°)
   const hiRGB        = [Math.max(0,255-accentRGB[0]), accentRGB[2], accentRGB[1]];
 
-  // ── BEAT DETECTION ───────────────────────────
   let bassEnergy = 0;
   for (let b = 0; b < 6; b++) bassEnergy += (dataArr[b] || 0);
   bassEnergy /= 6;
@@ -1591,18 +1541,14 @@ function vizDraw() {
   beatAvg /= _beatHistory.length;
   const prevBeat = _isBeat;
   _isBeat = isPlaying && bassEnergy > beatAvg * 1.42 && bassEnergy > 28;
-  if (_isBeat && !prevBeat) _beatPulse = 1.0;  // fire pulse on rising edge only
-  _beatPulse *= 0.88;  // decay
+  if (_isBeat && !prevBeat) _beatPulse = 1.0;
+  _beatPulse *= 0.88;
 
-  // ── RING ROTATION (plays slowly while playing, freezes when paused) ───────
   if (isPlaying) _ringRotation += 0.0018 + bassEnergy * 0.000015;
   _idlePhase += 0.025;
 
   _vizCtx.clearRect(0, 0, size, size);
 
-  // ────────────────────────────────────────────
-  // BEAT PULSE COVER SCALE (DOM, not canvas)
-  // ────────────────────────────────────────────
   const cover = document.getElementById('musicCover');
   if (cover) {
     const sc = 1 + _beatPulse * 0.06;
@@ -1610,9 +1556,6 @@ function vizDraw() {
     cover.style.transition = _beatPulse > 0.05 ? 'none' : 'transform 0.3s ease';
   }
 
-  // ────────────────────────────────────────────
-  // OUTER GLOW RING — pulses with bass energy
-  // ────────────────────────────────────────────
   if (_vizMode !== 'galaxy') {
     const glowAlpha = isPlaying ? Math.min(0.55, (bassEnergy / 255) * 0.7 + _beatPulse * 0.35) : VIZ_IDLE_ALPHA * 0.4;
     const glowR     = innerR * (1.0 + _beatPulse * 0.04);
@@ -1625,9 +1568,6 @@ function vizDraw() {
     _vizCtx.fill();
   }
 
-  // ────────────────────────────────────────────
-  // DISPATCH TO MODE-SPECIFIC RENDERER
-  // ────────────────────────────────────────────
   if (_vizMode === 'circular') {
     vizDrawCircular(cx, cy, innerR, maxH, binStep, dataArr, accentRaw, accentRGB, hiRGB);
   } else if (_vizMode === 'wave') {
@@ -1638,7 +1578,6 @@ function vizDraw() {
     vizDrawGalaxy(cx, cy, size, innerR, binStep, dataArr, accentRaw, accentRGB);
   }
 
-  // ── PARTICLES (shared across circular + galaxy modes) ────────────────────
   if (_vizMode === 'circular' || _vizMode === 'galaxy') {
     for (let i = _particles.length - 1; i >= 0; i--) {
       const p = _particles[i];
@@ -1656,7 +1595,6 @@ function vizDraw() {
   _vizRaf = requestAnimationFrame(vizDraw);
 }
 
-// ── MODE: CIRCULAR (original + upgrades) ─────
 function vizDrawCircular(cx, cy, innerR, maxH, binStep, dataArr, accentRaw, accentRGB, hiRGB) {
   const barHalfAngle = (VIZ_BAR_DEG / 2) * (Math.PI / 180);
   const baseAlpha    = isPlaying ? 0.88 : VIZ_IDLE_ALPHA;
@@ -1665,14 +1603,12 @@ function vizDrawCircular(cx, cy, innerR, maxH, binStep, dataArr, accentRaw, acce
     let sum = 0;
     for (let b = 0; b < binStep; b++) sum += (dataArr[i * binStep + b] || 0);
     const norm   = sum / (binStep * 255);
-    const freqT  = i / VIZ_BARS;  // 0 = bass, 1 = treble
+    const freqT  = i / VIZ_BARS;
 
-    // Idle breathing: gentle sine wave when paused
     const idleHeight = maxH * VIZ_IDLE_ALPHA * (0.5 + 0.5 * Math.sin(_idlePhase + freqT * Math.PI * 4));
     const height = isPlaying ? Math.max(2, norm * maxH) : idleHeight;
     const angle  = (i / VIZ_BARS) * Math.PI * 2 - Math.PI / 2 + _ringRotation;
 
-    // Peak hold
     if (isPlaying) {
       _peakHeights[i] = height > _peakHeights[i] ? height : _peakHeights[i] * VIZ_PEAK_DECAY;
     } else {
@@ -1680,7 +1616,6 @@ function vizDrawCircular(cx, cy, innerR, maxH, binStep, dataArr, accentRaw, acce
     }
     const peak = _peakHeights[i];
 
-    // Spawn particles on loud bars during beats
     if (_isBeat && norm > 0.68 && isPlaying && Math.random() < 0.28) {
       const tipDist = innerR + height;
       const cos = Math.cos(angle), sin = Math.sin(angle);
@@ -1704,7 +1639,6 @@ function vizDrawCircular(cx, cy, innerR, maxH, binStep, dataArr, accentRaw, acce
     const x2 =  Math.tan(barHalfAngle) * innerR;
     const tipW = 1.4;
 
-    // Rounded-tip bar using bezierCurveTo
     const bx1 = x1, by1 = -innerR;
     const bx2 = x2, by2 = -innerR;
     const tx1 = x1 * tipW, ty  = -(innerR + height);
@@ -1717,7 +1651,6 @@ function vizDrawCircular(cx, cy, innerR, maxH, binStep, dataArr, accentRaw, acce
     _vizCtx.quadraticCurveTo(0, ty - Math.abs(tx2 - tx1) * 0.5, tx1, ty);
     _vizCtx.closePath();
 
-    // Frequency-gradient fill: bass = accent, treble = hi colour
     const grad = _vizCtx.createLinearGradient(0, -innerR, 0, -(innerR + height));
     grad.addColorStop(0,   vizLerpColor(accentRGB, hiRGB, freqT, baseAlpha));
     grad.addColorStop(0.6, vizLerpColor(accentRGB, hiRGB, freqT, isPlaying ? 0.42 : VIZ_IDLE_ALPHA * 0.5));
@@ -1725,7 +1658,6 @@ function vizDrawCircular(cx, cy, innerR, maxH, binStep, dataArr, accentRaw, acce
     _vizCtx.fillStyle = grad;
     _vizCtx.fill();
 
-    // Peak dot
     if (isPlaying && peak > 3) {
       const px = Math.tan(barHalfAngle) * innerR * tipW;
       _vizCtx.fillStyle = vizLerpColor(accentRGB, hiRGB, freqT, 0.85);
@@ -1738,7 +1670,6 @@ function vizDrawCircular(cx, cy, innerR, maxH, binStep, dataArr, accentRaw, acce
   }
 }
 
-// ── MODE: WAVE (oscilloscope) ────────────────
 function vizDrawWave(cx, cy, size, waveArr, accentRaw, accentRGB, hiRGB) {
   const h    = size * 0.28;
   const y0   = cy;
@@ -1755,13 +1686,11 @@ function vizDrawWave(cx, cy, size, waveArr, accentRaw, accentRGB, hiRGB) {
     const v  = (waveArr[i] / 128.0) - 1.0;
     const x  = i * step;
     const y  = y0 + v * h;
-    const t  = i / waveArr.length;
     if (i === 0) _vizCtx.moveTo(x, y);
     else         _vizCtx.lineTo(x, y);
   }
   _vizCtx.stroke();
 
-  // second harmonic layer (fainter, shifted)
   _vizCtx.globalAlpha = 0.25;
   _vizCtx.beginPath();
   for (let i = 0; i < waveArr.length; i++) {
@@ -1776,7 +1705,6 @@ function vizDrawWave(cx, cy, size, waveArr, accentRaw, accentRGB, hiRGB) {
   _vizCtx.globalAlpha = 1;
   _vizCtx.restore();
 
-  // Idle breathing pulse ring when paused
   if (!isPlaying) {
     const breathR = size * 0.18 + Math.sin(_idlePhase) * size * 0.02;
     const grd = _vizCtx.createRadialGradient(cx, cy, breathR * 0.7, cx, cy, breathR);
@@ -1789,7 +1717,6 @@ function vizDrawWave(cx, cy, size, waveArr, accentRaw, accentRGB, hiRGB) {
   }
 }
 
-// ── MODE: MIRROR BARS (horizontal symmetric) ─
 function vizDrawMirror(cx, cy, size, binStep, dataArr, accentRaw, accentRGB, hiRGB) {
   const MBARS  = 80;
   const barW   = size / MBARS;
@@ -1808,7 +1735,6 @@ function vizDrawMirror(cx, cy, size, binStep, dataArr, accentRaw, accentRGB, hiR
     const x = i * barW + gap / 2;
     const w = barW - gap;
 
-    // Top bar (going up from centre)
     const grad1 = _vizCtx.createLinearGradient(0, cy, 0, cy - barH);
     grad1.addColorStop(0, vizLerpColor(accentRGB, hiRGB, freqT, baseAlpha));
     grad1.addColorStop(1, vizLerpColor(accentRGB, hiRGB, freqT, 0));
@@ -1817,7 +1743,6 @@ function vizDrawMirror(cx, cy, size, binStep, dataArr, accentRaw, accentRGB, hiR
     _vizCtx.roundRect(x, cy - barH, w, barH, [3, 3, 0, 0]);
     _vizCtx.fill();
 
-    // Bottom bar (mirror)
     const grad2 = _vizCtx.createLinearGradient(0, cy, 0, cy + barH);
     grad2.addColorStop(0, vizLerpColor(accentRGB, hiRGB, freqT, baseAlpha * 0.65));
     grad2.addColorStop(1, vizLerpColor(accentRGB, hiRGB, freqT, 0));
@@ -1826,14 +1751,12 @@ function vizDrawMirror(cx, cy, size, binStep, dataArr, accentRaw, accentRGB, hiR
     _vizCtx.roundRect(x, cy, w, barH, [0, 0, 3, 3]);
     _vizCtx.fill();
 
-    // Peak dot on top bar
     if (isPlaying && norm > 0.08) {
       _vizCtx.fillStyle = vizLerpColor(accentRGB, hiRGB, freqT, 0.9);
       _vizCtx.fillRect(x, cy - barH - 3, w, 2);
     }
   }
 
-  // Beat flash line
   if (_beatPulse > 0.1) {
     _vizCtx.globalAlpha = _beatPulse * 0.35;
     _vizCtx.fillStyle = accentRaw;
@@ -1842,15 +1765,11 @@ function vizDrawMirror(cx, cy, size, binStep, dataArr, accentRaw, accentRGB, hiR
   }
 }
 
-// ── MODE: GALAXY (starfield + radial bursts) ─
 function vizDrawGalaxy(cx, cy, size, innerR, binStep, dataArr, accentRaw, accentRGB) {
-  // overall average energy
   let energy = 0;
   for (let b = 0; b < dataArr.length * 0.5; b++) energy += dataArr[b];
   energy /= (dataArr.length * 0.5 * 255);
 
-  // Rotate and draw stars — each star gets a subtle color tint derived from accentRGB
-  // colorTint=0: pure accent; colorTint=1: complementary shift for depth
   const hiStarRGB = [Math.max(0,255-accentRGB[0]), accentRGB[2], accentRGB[1]];
   const warmRGB   = [accentRGB[2], accentRGB[0], accentRGB[1]];
   for (let i = 0; i < _stars.length; i++) {
@@ -1862,7 +1781,6 @@ function vizDrawGalaxy(cx, cy, size, innerR, binStep, dataArr, accentRaw, accent
     const twinkle = 0.3 + 0.7 * Math.abs(Math.sin(s.twinkle + _idlePhase));
     s.twinkle += 0.04;
     const a = isPlaying ? twinkle * (0.3 + energy * 0.9) : twinkle * 0.25;
-    // Blend star color between accent, warm-shift, and complementary by star's fixed tint
     const baseColor = s.colorTint < 0.5
       ? vizLerpColor(accentRGB, warmRGB, s.colorTint * 2, Math.min(1, a))
       : vizLerpColor(warmRGB, hiStarRGB, (s.colorTint - 0.5) * 2, Math.min(1, a));
@@ -1872,7 +1790,6 @@ function vizDrawGalaxy(cx, cy, size, innerR, binStep, dataArr, accentRaw, accent
     _vizCtx.fill();
   }
 
-  // Radial burst lines from centre on beats
   if (isPlaying) {
     for (let i = 0; i < VIZ_BARS; i++) {
       let sum = 0;
@@ -1892,7 +1809,6 @@ function vizDrawGalaxy(cx, cy, size, innerR, binStep, dataArr, accentRaw, accent
     }
   }
 
-  // Central glow
   const glowAlpha = isPlaying ? energy * 0.6 + _beatPulse * 0.4 : 0.08 + 0.04 * Math.sin(_idlePhase);
   const grd = _vizCtx.createRadialGradient(cx, cy, 0, cx, cy, innerR * 0.85);
   grd.addColorStop(0, vizHexToRgba(accentRaw, glowAlpha));
@@ -1902,7 +1818,6 @@ function vizDrawGalaxy(cx, cy, size, innerR, binStep, dataArr, accentRaw, accent
   _vizCtx.fillStyle = grd;
   _vizCtx.fill();
 
-  // Spawn particles on beat
   if (_isBeat && isPlaying) {
     for (let p = 0; p < 8; p++) {
       const angle = Math.random() * Math.PI * 2;
@@ -1953,7 +1868,7 @@ function updateRepeatBtn() { document.getElementById('repeatBtn').classList.togg
 function renderPlaylist() {
   const pl = document.getElementById('playlist');
   if (!tracks.length) {
-    pl.innerHTML = '<div class="no-tracks-msg">No tracks yet — add them in <code>mydata.js</code></div>';
+    pl.innerHTML = '<div class="no-tracks-msg">Playlist empty.</div>';
     return;
   }
   pl.innerHTML = tracks.map((t, i) => `
@@ -1966,7 +1881,6 @@ function renderPlaylist() {
     </div>`).join('');
 }
 
-// Seek
 const seekBar = document.getElementById('seekBar');
 let seeking = false;
 seekBar.addEventListener('mousedown', () => seeking = true);
@@ -2006,19 +1920,14 @@ function fmtAudioTime(s) {
 }
 
 initMusic();
-// Initial canvas mount is deferred so the music panel has rendered and
-// getBoundingClientRect returns real pixel values (not zeros from display:none).
-// The music tab is not active by default, so we mount after a short delay.
 setTimeout(vizMountCanvas, 80);
-// Re-mount on resize so the canvas stays centred on the cover
 window.addEventListener('resize', () => { if (document.getElementById('panel-music').classList.contains('active')) vizMountCanvas(); });
-// set initial vol bar gradient
 const vb = document.getElementById('volBar');
 vb.style.background = `linear-gradient(to right, var(--accent) ${vb.value}%, var(--surface2) ${vb.value}%)`;
 
-/* ══════════════════════════════════════════════
-   REMINDERS
-══════════════════════════════════════════════ */
+/* ──────────────────────────────────────────────
+   REMINDERS MODULE
+   ────────────────────────────────────────────── */
 let reminders = LS.get('reminders') || [];
 
 if (!LS.get('rem_init') && window.MYDATA?.DEFAULT_REMINDERS) {
@@ -2034,7 +1943,7 @@ function saveReminders() { LS.set('reminders', reminders); }
 function addReminder() {
   const text = document.getElementById('remText').value.trim();
   const time = document.getElementById('remTime').value;
-  if (!text || !time) { showNotif('Enter reminder text and time!'); return; }
+  if (!text || !time) { showNotif('Missing fields'); return; }
   reminders.push({ id: Date.now(), text, time, fired: false });
   saveReminders();
   renderReminders();
@@ -2057,14 +1966,14 @@ function renderReminders() {
   badge.textContent = upcoming;
 
   if (!sorted.length) {
-    list.innerHTML = '<div class="empty"><div class="empty-icon">🔔</div><p>No reminders set. Add one above!</p></div>';
+    list.innerHTML = '<div class="empty"><div class="empty-icon">🔔</div><p>No reminders set.</p></div>';
     return;
   }
   list.innerHTML = sorted.map(r => `
     <li class="rem-item ${r.fired ? 'fired' : ''}">
       <span class="rem-time">${r.time}</span>
       <span class="rem-text">${escHtml(r.text)}</span>
-      <span class="rem-status">${r.fired ? '✓ done' : 'pending'}</span>
+      <span class="rem-status">${r.fired ? '✓' : ''}</span>
       <button class="rem-del" onclick="deleteReminder(${r.id})">×</button>
     </li>`).join('');
 }
@@ -2077,7 +1986,7 @@ function checkReminders() {
       r.fired = true;
       showNotif(r.text);
       if (Notification.permission === 'granted') {
-        new Notification('Focus Reminder', { body: r.text, icon: '' });
+        new Notification('Focus Reminder', { body: r.text });
       }
     }
   });
@@ -2088,7 +1997,7 @@ function checkReminders() {
 function reqNotifPerm() {
   if ('Notification' in window) {
     Notification.requestPermission().then(p => {
-      showNotif(p === 'granted' ? 'Notifications enabled!' : 'Permission denied — in-app alerts will still work.');
+      showNotif(p === 'granted' ? 'Alerts enabled' : 'Permission denied');
     });
   }
 }
@@ -2096,9 +2005,9 @@ function reqNotifPerm() {
 setInterval(checkReminders, 15000);
 renderReminders();
 
-/* ══════════════════════════════════════════════
-   NOTIFICATION BANNER
-══════════════════════════════════════════════ */
+/* ──────────────────────────────────────────────
+   UI COMPONENTS
+   ────────────────────────────────────────────── */
 let notifTimeout;
 function showNotif(msg) {
   const b = document.getElementById('notifBanner');
@@ -2108,9 +2017,6 @@ function showNotif(msg) {
   notifTimeout = setTimeout(() => b.classList.remove('show'), 3500);
 }
 
-/* ══════════════════════════════════════════════
-   DAILY RESET (reset reminder "fired" at midnight)
-══════════════════════════════════════════════ */
 function checkDailyReset() {
   const today = new Date().toDateString();
   const last = LS.get('last_day');
