@@ -187,6 +187,30 @@ window.MYDATA = {
       artist: "Yo Yo Honey Singh",
       src: "music/Sheeshe Wali Chunni.mp3",
       cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGsc1XQM4haSJd7HMUEoOAFxBBfkwslmLmAQ&s"
+    },
+    {
+      title: "ANGAD",
+      artist: "Little Bhatia",
+      src: "music/ANGAD.m4a",
+      cover: "https://c.saavncdn.com/112/MTV-Hustle-4-Episode-13-Hindi-2024-20241130074107-500x500.jpg"
+    },
+    {
+      title: "Bali Battle",
+      artist: "Little Bhatia",
+      src: "music/Bali Battle.m4a",
+      cover: "https://c.saavncdn.com/112/MTV-Hustle-4-Episode-13-Hindi-2024-20241130074107-500x500.jpg"
+    },
+    {
+      title: "Kothi Bangle Wali",
+      artist: "Mad Trip",
+      src: "music/Kothi Bangle Wali.m4a",
+      cover: "https://c.saavncdn.com/112/MTV-Hustle-4-Episode-13-Hindi-2024-20241130074107-500x500.jpg"
+    },
+    {
+      title: "Bihari Tere Pyaar Mein",
+      artist: "Little Bhatia",
+      src: "music/Bihari Tere Pyaar Mein.m4a",
+      cover: "https://c.saavncdn.com/112/MTV-Hustle-4-Episode-13-Hindi-2024-20241130074107-500x500.jpg"
     }
   ],
 
