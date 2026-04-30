@@ -212,8 +212,6 @@ window.MYDATA = {
       src: "music/Bihari Tere Pyaar Mein.m4a",
       cover: "https://c.saavncdn.com/112/MTV-Hustle-4-Episode-13-Hindi-2024-20241130074107-500x500.jpg"
     },
-
-    ],
     {
       title: "BARGAD",
       artist: "Arpit Bala",
@@ -280,6 +278,9 @@ window.MYDATA = {
       src: "music/Chuppi.mp3",
       cover: "https://c.saavncdn.com/237/Keychain-Laalu-Hindi-2025-20251211032753-500x500.jpg"
     },
+
+    ],
+    
   
 
   // --- Initial Content ---
