@@ -213,6 +213,72 @@ window.MYDATA = {
       cover: "https://c.saavncdn.com/112/MTV-Hustle-4-Episode-13-Hindi-2024-20241130074107-500x500.jpg"
     }
   ],
+  {
+      title: "BARGAD",
+      artist: "Arpit Bala",
+      src: "music/BARGAD.mp3",
+      cover: "https://c.saavncdn.com/204/bargad-Hindi-2025-20251114195931-150x150.jpg"
+    },
+    {
+      title: "Best Friend",
+      artist: "Arpit Bala",
+      src: "music/Best Friend.mp3",
+      cover: "https://c.saavncdn.com/237/Keychain-Laalu-Hindi-2025-20251211032753-500x500.jpg"
+    },
+    {
+      title: "Rakhlo Tum Chupaake",
+      artist: "Arpit Bala",
+      src: "music/Rakhlo Tum Chupaake.mp3",
+      cover: "https://c.saavncdn.com/237/Keychain-Laalu-Hindi-2025-20251211032753-500x500.jpg"
+    },
+    {
+      title: "RTC Bonus",
+      artist: "Arpit Bala",
+      src: "music/RTC Bonus.mp3",
+      cover: "cover/rtcbonus.jpg"
+    },
+    {
+      title: "CHAMPAKALI",
+      artist: "Arpit Bala",
+      src: "music/CHAMPAKALI.mp3",
+      cover: "https://c.saavncdn.com/237/Keychain-Laalu-Hindi-2025-20251211032753-500x500.jpg"
+    },
+    {
+      title: "Kaise Manaye",
+      artist: "Arpit Bala",
+      src: "music/Kaise Manaye.mp3",
+      cover: "https://c.saavncdn.com/237/Keychain-Laalu-Hindi-2025-20251211032753-500x500.jpg"
+    },
+    {
+      title: "Pyari",
+      artist: "Arpit Bala",
+      src: "music/Pyari.mp3",
+      cover: "https://c.saavncdn.com/237/Keychain-Laalu-Hindi-2025-20251211032753-500x500.jpg"
+    },
+    {
+      title: "Kaise",
+      artist: "Arpit Bala",
+      src: "music/Kaise.mp3",
+      cover: "https://c.saavncdn.com/237/Keychain-Laalu-Hindi-2025-20251211032753-500x500.jpg"
+    },
+    {
+      title: "Daraaz",
+      artist: "Arpit Bala",
+      src: "music/Daraaz.mp3",
+      cover: "https://c.saavncdn.com/237/Keychain-Laalu-Hindi-2025-20251211032753-500x500.jpg"
+    },
+    {
+      title: "Taroon",
+      artist: "Arpit Bala",
+      src: "music/Taroon.mp3",
+      cover: "https://c.saavncdn.com/237/Keychain-Laalu-Hindi-2025-20251211032753-500x500.jpg"
+    },
+    {
+      title: "Chuppi",
+      artist: "Arpit Bala",
+      src: "music/Chuppi.mp3",
+      cover: "https://c.saavncdn.com/237/Keychain-Laalu-Hindi-2025-20251211032753-500x500.jpg"
+    },
 
   // --- Initial Content ---
   DEFAULT_TASKS: [ // As the name says, default, appears for first time only
