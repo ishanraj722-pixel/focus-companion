@@ -749,7 +749,7 @@ function toggleSW() {
     
     const activeTasks = tasks.filter(t => !t.done).map(t => t.text);
     if (swElapsed > 60000) {
-      fetch('http://localhost:5000/log_session', { 
+      fetch('https://focus-companion.onrender.com/log_session', { 
         method: 'POST', 
         headers: {'Content-Type':'application/json'}, 
         body: JSON.stringify({duration_minutes: parseFloat((swElapsed/60000).toFixed(2)), tasks_in_progress: activeTasks})
@@ -757,7 +757,7 @@ function toggleSW() {
       
       showNotif("Mannak AI analyzing session...");
       
-      fetch('http://localhost:5000/critique', { 
+      fetch('https://focus-companion.onrender.com/critique', { 
         method: 'POST', 
         headers: {'Content-Type':'application/json'}, 
         body: JSON.stringify({duration_minutes: parseFloat((swElapsed/60000).toFixed(2)), tasks_in_progress: activeTasks})
@@ -949,7 +949,7 @@ async function applyMood() {
         showNotif("Mannak AI analyzing 4D targets...");
         console.log("📡 Sending request to Python server...");
         
-        const res = await fetch('http://localhost:5000/analyze_mood', { 
+        const res = await fetch('https://focus-companion.onrender.com/analyze_mood', { 
           method: 'POST', 
           headers: { 'Content-Type': 'application/json' }, 
           body: JSON.stringify({ mood: text }) 
@@ -1033,7 +1033,7 @@ function sendMLFeedback(score) {
     document.getElementById('mlFeedbackWrap').style.display = 'none';
     if (!_lastMoodInput || !_lastTrackFeatures) return;
     
-    fetch('http://localhost:5000/log_training', {
+    fetch('https://focus-companion.onrender.com/log_training', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ mood_text: _lastMoodInput, features: _lastTrackFeatures, score: score })
@@ -1602,7 +1602,7 @@ function showNotif(m) {
 let workChart = null;
 async function loadAnalytics() {
   try {
-    const res = await fetch('http://localhost:5000/get_stats'); 
+    const res = await fetch('https://focus-companion.onrender.com/get_stats'); 
     const data = await res.json(); 
     if(!data.length) return;
     
