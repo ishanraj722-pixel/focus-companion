@@ -3,12 +3,12 @@
 window.MYDATA = {
 
   // ─── MUSIC TRACKS ────────────────────────────────
-  // Add your songs here. 'src' = path or URL to audio file, I think it's eneough, wil add more if feels like adding 
+  // Add your songs here. 'src' = path or URL to audio file.
   MUSIC_TRACKS: [
     {
     "title": "6 Am",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/6 Am.mp3",
+    "src": "music/6 Am.mp3",
     "cover": "",
     "bpm": 89,
     "energy": "high",
@@ -23,7 +23,7 @@ window.MYDATA = {
   {
     "title": "Aashiqana",
     "artist": "Chaar Diwaari, Gini, Indian Ocean",
-    "src": "Music/Aashiqana.mp3",
+    "src": "music/Aashiqana.mp3",
     "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7a/0d/a3/7a0da341-8769-4b81-b3d5-a85a5f630929/26UMGIM21264.rgb.jpg/600x600cc.webp",
     "bpm": 112,
     "energy": "medium",
@@ -38,7 +38,7 @@ window.MYDATA = {
   {
     "title": "Ambulance",
     "artist": "Ikka",
-    "src": "Music/Ambulance.mp3",
+    "src": "music/Ambulance.mp3",
     "cover": "https://i.scdn.co/image/ab67616d0000b273e1eaa44280c38ffa982211ac",
     "bpm": 99,
     "energy": "high",
@@ -53,7 +53,7 @@ window.MYDATA = {
   {
     "title": "ANGAD",
     "artist": "Unknown Artist",
-    "src": "Music/ANGAD.m4a",
+    "src": "music/ANGAD.m4a",
     "cover": "",
     "bpm": 129,
     "energy": "high",
@@ -68,7 +68,7 @@ window.MYDATA = {
   {
     "title": "Art Samajh Aata Nahi",
     "artist": "Ikka",
-    "src": "Music/Art Samajh Aata Nahi.mp3",
+    "src": "music/Art Samajh Aata Nahi.mp3",
     "cover": "",
     "bpm": 136,
     "energy": "high",
@@ -83,7 +83,7 @@ window.MYDATA = {
   {
     "title": "BALI BATTLE",
     "artist": "Unknown Artist",
-    "src": "Music/BALI BATTLE.m4a",
+    "src": "music/BALI BATTLE.m4a",
     "cover": "",
     "bpm": 144,
     "energy": "medium",
@@ -98,7 +98,7 @@ window.MYDATA = {
   {
     "title": "Bargad",
     "artist": "sufr, Arpit Bala, Toorjo Dey",
-    "src": "Music/Bargad.mp3",
+    "src": "music/Bargad.mp3",
     "cover": "",
     "bpm": 103,
     "energy": "medium",
@@ -113,7 +113,7 @@ window.MYDATA = {
   {
     "title": "Beeba",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Beeba.mp3",
+    "src": "music/Beeba.mp3",
     "cover": "",
     "bpm": 152,
     "energy": "medium",
@@ -128,7 +128,7 @@ window.MYDATA = {
   {
     "title": "\ufeffBest Friend",
     "artist": "\ufeffArpit Bala, pho, Adil, NEVERSOBER",
-    "src": "Music/Best Friend.mp3",
+    "src": "music/Best Friend.mp3",
     "cover": "",
     "bpm": 112,
     "energy": "high",
@@ -143,7 +143,7 @@ window.MYDATA = {
   {
     "title": "Bihari Tere Pyaar Mein",
     "artist": "Unknown Artist",
-    "src": "Music/Bihari Tere Pyaar Mein.m4a",
+    "src": "music/Bihari Tere Pyaar Mein.m4a",
     "cover": "",
     "bpm": 89,
     "energy": "medium",
@@ -158,7 +158,7 @@ window.MYDATA = {
   {
     "title": "Bom_digydigy",
     "artist": "Unknown Artist",
-    "src": "Music/Bom_digydigy.m4a",
+    "src": "music/Bom_digydigy.m4a",
     "cover": "",
     "bpm": 103,
     "energy": "high",
@@ -173,7 +173,7 @@ window.MYDATA = {
   {
     "title": "Bonita",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Bonita - Yo Yo Honey Singh.mp3",
+    "src": "music/Bonita - Yo Yo Honey Singh.mp3",
     "cover": "",
     "bpm": 108,
     "energy": "high",
@@ -188,7 +188,7 @@ window.MYDATA = {
   {
     "title": "Bonita",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Bonita.mp3",
+    "src": "music/Bonita.mp3",
     "cover": "",
     "bpm": 108,
     "energy": "high",
@@ -203,7 +203,7 @@ window.MYDATA = {
   {
     "title": "Boom Shaka",
     "artist": "Dhanda Nyoliwala, KRSNA",
-    "src": "Music/Boom Shaka.mp3",
+    "src": "music/Boom Shaka.mp3",
     "cover": "",
     "bpm": 129,
     "energy": "high",
@@ -218,7 +218,7 @@ window.MYDATA = {
   {
     "title": "Caliente",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Caliente.mp3",
+    "src": "music/Caliente.mp3",
     "cover": "",
     "bpm": 129,
     "energy": "medium",
@@ -233,7 +233,7 @@ window.MYDATA = {
   {
     "title": "\ufeffChampakali",
     "artist": "\ufeffArpit Bala, Natiq, toorjo dey, Angad Virk",
-    "src": "Music/Champakali.mp3",
+    "src": "music/Champakali.mp3",
     "cover": "",
     "bpm": 112,
     "energy": "high",
@@ -248,7 +248,7 @@ window.MYDATA = {
   {
     "title": "Chhori",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Chhori.mp3",
+    "src": "music/Chhori.mp3",
     "cover": "",
     "bpm": 185,
     "energy": "medium",
@@ -263,7 +263,7 @@ window.MYDATA = {
   {
     "title": "\ufeffChuppi",
     "artist": "\ufeffArpit Bala, sufr, Adil, A.O.D., Angad Virk",
-    "src": "Music/Chuppi.mp3",
+    "src": "music/Chuppi.mp3",
     "cover": "",
     "bpm": 112,
     "energy": "medium",
@@ -278,7 +278,7 @@ window.MYDATA = {
   {
     "title": "\ufeffDaraaz Mein",
     "artist": "\ufeffArpit Bala, A.O.D., Angad Virk",
-    "src": "Music/Daraaz.mp3",
+    "src": "music/Daraaz.mp3",
     "cover": "",
     "bpm": 129,
     "energy": "medium",
@@ -293,7 +293,7 @@ window.MYDATA = {
   {
     "title": "Dogs N Snakes",
     "artist": "Ikka",
-    "src": "Music/Dogs N Snakes.mp3",
+    "src": "music/Dogs N Snakes.mp3",
     "cover": "",
     "bpm": 92,
     "energy": "high",
@@ -308,7 +308,7 @@ window.MYDATA = {
   {
     "title": "Fubu",
     "artist": "Ikka",
-    "src": "Music/Fubu.mp3",
+    "src": "music/Fubu.mp3",
     "cover": "",
     "bpm": 152,
     "energy": "medium",
@@ -323,7 +323,7 @@ window.MYDATA = {
   {
     "title": "Fuck Them",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Fuck Them.mp3",
+    "src": "music/Fuck Them.mp3",
     "cover": "",
     "bpm": 99,
     "energy": "medium",
@@ -338,7 +338,7 @@ window.MYDATA = {
   {
     "title": "Hide It",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Hide It.mp3",
+    "src": "music/Hide It.mp3",
     "cover": "",
     "bpm": 129,
     "energy": "high",
@@ -353,7 +353,7 @@ window.MYDATA = {
   {
     "title": "High On Me",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/High On Me.mp3",
+    "src": "music/High On Me.mp3",
     "cover": "",
     "bpm": 117,
     "energy": "high",
@@ -368,7 +368,7 @@ window.MYDATA = {
   {
     "title": "IshareTere_gururandhawa",
     "artist": "Unknown Artist",
-    "src": "Music/IshareTere_gururandhawa.m4a",
+    "src": "music/IshareTere_gururandhawa.m4a",
     "cover": "",
     "bpm": 129,
     "energy": "high",
@@ -383,7 +383,7 @@ window.MYDATA = {
   {
     "title": "Iss Tarah - PagalNew ",
     "artist": "Chaar Diwaari, Sonu Nigam",
-    "src": "Music/Iss Tarah.mp3",
+    "src": "music/Iss Tarah.mp3",
     "cover": "",
     "bpm": 117,
     "energy": "high",
@@ -398,7 +398,7 @@ window.MYDATA = {
   {
     "title": "Jatt Mehkma",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Jatt Mehkma.mp3",
+    "src": "music/Jatt Mehkma.mp3",
     "cover": "",
     "bpm": 86,
     "energy": "high",
@@ -413,7 +413,7 @@ window.MYDATA = {
   {
     "title": "\ufeffKaise Manaye",
     "artist": "\ufeffArpit Bala, Adil, Karan Kanchan, A.O.D.",
-    "src": "Music/Kaise Manaye.mp3",
+    "src": "music/Kaise Manaye.mp3",
     "cover": "",
     "bpm": 112,
     "energy": "high",
@@ -428,7 +428,7 @@ window.MYDATA = {
   {
     "title": "\ufeffKaise Manaye",
     "artist": "\ufeffArpit Bala, Adil, Karan Kanchan, A.O.D.",
-    "src": "Music/Kaise.mp3",
+    "src": "music/Kaise.mp3",
     "cover": "",
     "bpm": 112,
     "energy": "high",
@@ -443,7 +443,7 @@ window.MYDATA = {
   {
     "title": "Kothi Bangle Wali",
     "artist": "Unknown Artist",
-    "src": "Music/Kothi Bangle Wali.m4a",
+    "src": "music/Kothi Bangle Wali.m4a",
     "cover": "",
     "bpm": 99,
     "energy": "high",
@@ -458,7 +458,7 @@ window.MYDATA = {
   {
     "title": "Lapata",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Lapata.mp3",
+    "src": "music/Lapata.mp3",
     "cover": "",
     "bpm": 108,
     "energy": "high",
@@ -473,7 +473,7 @@ window.MYDATA = {
   {
     "title": "Majnoonh",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Majnoonh.mp3",
+    "src": "music/Majnoonh.mp3",
     "cover": "",
     "bpm": 117,
     "energy": "high",
@@ -488,7 +488,7 @@ window.MYDATA = {
   {
     "title": "Malamaal",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Malamaal.mp3",
+    "src": "music/Malamaal.mp3",
     "cover": "",
     "bpm": 129,
     "energy": "high",
@@ -503,7 +503,7 @@ window.MYDATA = {
   {
     "title": "Millionaire",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Millionaire.mp3",
+    "src": "music/Millionaire.mp3",
     "cover": "",
     "bpm": 96,
     "energy": "medium",
@@ -518,7 +518,7 @@ window.MYDATA = {
   {
     "title": "Nishu - PagalNew ",
     "artist": "Ikka",
-    "src": "Music/Nishu Ikka 320 Kbps.mp3",
+    "src": "music/Nishu Ikka 320 Kbps.mp3",
     "cover": "",
     "bpm": 117,
     "energy": "medium",
@@ -533,7 +533,7 @@ window.MYDATA = {
   {
     "title": "pagal_badshah",
     "artist": "Unknown Artist",
-    "src": "Music/pagal_badshah.m4a",
+    "src": "music/pagal_badshah.m4a",
     "cover": "",
     "bpm": 144,
     "energy": "medium",
@@ -548,7 +548,7 @@ window.MYDATA = {
   {
     "title": "Payal",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Payal.mp3",
+    "src": "music/Payal.mp3",
     "cover": "",
     "bpm": 99,
     "energy": "medium",
@@ -563,7 +563,7 @@ window.MYDATA = {
   {
     "title": "\ufeffPyari Amaanat",
     "artist": "\ufeffArpit Bala, A.O.D., Angad Virk",
-    "src": "Music/Pyari.mp3",
+    "src": "music/Pyari.mp3",
     "cover": "",
     "bpm": 99,
     "energy": "high",
@@ -578,7 +578,7 @@ window.MYDATA = {
   {
     "title": "\ufeffRakhlo Tum Chupaake",
     "artist": "\ufeffArpit Bala, Adil",
-    "src": "Music/Rakhlo Tum Chupaake.mp3",
+    "src": "music/Rakhlo Tum Chupaake.mp3",
     "cover": "",
     "bpm": 129,
     "energy": "high",
@@ -593,7 +593,7 @@ window.MYDATA = {
   {
     "title": "Rap God",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Rap God - Yo Yo Honey Singh.mp3",
+    "src": "music/Rap God - Yo Yo Honey Singh.mp3",
     "cover": "",
     "bpm": 112,
     "energy": "medium",
@@ -608,7 +608,7 @@ window.MYDATA = {
   {
     "title": "Rap God",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Rap God.mp3",
+    "src": "music/Rap God.mp3",
     "cover": "",
     "bpm": 112,
     "energy": "medium",
@@ -623,7 +623,7 @@ window.MYDATA = {
   {
     "title": "Rounds N Ring",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Rounds N Ring.mp3",
+    "src": "music/Rounds N Ring.mp3",
     "cover": "",
     "bpm": 92,
     "energy": "medium",
@@ -638,7 +638,7 @@ window.MYDATA = {
   {
     "title": "\ufeffRTC Bonus",
     "artist": "\ufeffArpit Bala, Adil",
-    "src": "Music/RTC Bonus.mp3",
+    "src": "music/RTC Bonus.mp3",
     "cover": "",
     "bpm": 129,
     "energy": "medium",
@@ -653,7 +653,7 @@ window.MYDATA = {
   {
     "title": "Shamaan De Vele",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Shamaan De Vele.mp3",
+    "src": "music/Shamaan De Vele.mp3",
     "cover": "",
     "bpm": 96,
     "energy": "high",
@@ -668,7 +668,7 @@ window.MYDATA = {
   {
     "title": "Sheeshe Wali Chunni",
     "artist": "Yo Yo Honey Singh",
-    "src": "Music/Sheeshe Wali Chunni.mp3",
+    "src": "music/Sheeshe Wali Chunni.mp3",
     "cover": "",
     "bpm": 123,
     "energy": "medium",
@@ -683,7 +683,7 @@ window.MYDATA = {
   {
     "title": "Sunta Hoon Rawal",
     "artist": "Ikka",
-    "src": "Music/Sunta Hoon Rawal.mp3",
+    "src": "music/Sunta Hoon Rawal.mp3",
     "cover": "",
     "bpm": 108,
     "energy": "high",
@@ -698,7 +698,7 @@ window.MYDATA = {
   {
     "title": "\ufeffTaaron Se",
     "artist": "\ufeffArpit Bala, A.O.D., Angad Virk, Karan Kanchan",
-    "src": "Music/Taaron.mp3",
+    "src": "music/Taaron.mp3",
     "cover": "",
     "bpm": 161,
     "energy": "medium",
@@ -713,7 +713,7 @@ window.MYDATA = {
   {
     "title": "Trap Praa (RiskyjaTT.CoM)",
     "artist": "Raftaar,Prabh Deep (RiskyjaTT.CoM)",
-    "src": "Music/Trap Praa.mp3",
+    "src": "music/Trap Praa.mp3",
     "cover": "",
     "bpm": 123,
     "energy": "high",
